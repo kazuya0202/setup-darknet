@@ -64,5 +64,6 @@ aria2c -x5 https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7
 tar -xzvf cudnn-10.0-linux-x64-v7.6.0.64.tgz
 sudo cp -a cuda/lib64/* /usr/lib/cuda/lib64/
 sudo cp -a cuda/include/* /usr/lib/cuda/include/
-sudo ldconfig
+# sudo ldconfig
 
+. ~/.bashrc
