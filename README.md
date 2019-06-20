@@ -7,8 +7,7 @@
 https://github.com/kazuya0202/setup-darknet.git
 ```
 
-  
-
+<br>
 
 
 | Install Package | Version |
@@ -18,8 +17,7 @@ https://github.com/kazuya0202/setup-darknet.git
 |      CUDA       |  10.0   |
 |      cuDNN      |  7.6.0  |
 
-   
-
+ <br>
 
 
 # め～も～
@@ -32,7 +30,7 @@ $ cmake /* ... */ -D WITH_CUDA=OFF ..
 
 ```
 
-  
+<br>
 
 #### もくじ
 
