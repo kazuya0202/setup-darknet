@@ -1,149 +1,161 @@
 # Set Up Darknet-Environment(Linux)
 
-*Description* :  `https://github.com/kazuya0202/setup-darknet.git`
+###### *Description* :  
+
+```http
+# github
+https://github.com/kazuya0202/setup-darknet.git
+```
+
+
 
 | Install Package | Version |
 | :-------------: | :-----: |
 |  NVIDIA Driver  |    -    |
 |     OpenCV      |  3.3.0  |
 |      CUDA       |  10.0   |
-|      cuDNN      |  8.0 ?  |
+|      cuDNN      |  7.6.0  |
+
+  
+
+# め～も～
+
+```bash
+## cmake of OpenCV ( CUDAをインストールした後で )
+
+# CUDA=OFF にして cmake
+$ cmake /* ... */ -D WITH_CUDA=OFF ..
+
+```
 
 
 
-#### Table of contents
+#### もくじ
 
 + [0. Prepare For Install](#0.-prepare-for-install)
 + [1. Set Up OpenCV](#1.-set-up-opencv)
 + [2. Set Up CUDA](#2.-set-up-cuda)
 + [3. Set Up cuDNN](#3.-set-up-cudnn)
-+ [4. Build Darknet](#4.-build-darknet)
++ [4. Build Darknet](#4.-build-darknet)  
 
 
 
-### 0. Prepare For Install
+### 0. 環境構築の前に必要なものをインストールする
 
-*Packages* : 
+###### *Packages* : 
 
-+ apt-fast ...
-+ NVIDIA Driver
-
-
-
-> #### <u>< 重要 ></u>
->
-> - ##### 実行する前にCUIに切り替えること！
->
->   ```bash
->   $ sudo systemctl set-default multi-user.target
->   $ sudo reboot
->   ```
->
-> 
->
-> - Virtual Boxで試したときは、CUIに切り替えると`デスクトップ`が`◆◆◆◆◆◆`に文字化けしていたため、あらかじめ`Desktop`などと英語に変えておくとよい ▼
->
-> > #####  初期フォルダ名の変換スクリプト
-> >
-> > ```bash
-> > $ bash ./scripts/rename-home-directory.sh
-> > ```
-> >
-> > ウィンドウが出てきたら`Update names`を選択する
->
-> 
->
-> - GUIに戻すときは
->
->   ```bash
->   $ sudo systemctl set-default graphical.target
->   $ sudo reboot
->   ```
->
->   で切り替えることができる
++ apt-fast / cmake / build-essential ...
 
 
 
-*Run Script*
+###### *Run Script*
 
 ```bash
+$ sudo apt install -y git
+$ git clone https://github.com/kazuya0202/setup-darknet-linux.git
+
 $ bash ./prepare.sh
 ```
 
-> A. Install Basic (or useful) Command
+
+
+
+
+##  < 重要 >
+
+#### 	〇 <u>CUIにして実行すること</u>
+
+
+
+> + Virtual Boxで試したときは、CUIに切り替えると日本語がに文字化けするため、あらかじめフォルダ名を英語に変えておくとよい ▼
+>
+> ##### 初期フォルダ名の変換スクリプト
 >
 > ```bash
-> $ apt install -y sudo curl wget
-> 
-> $ /bin/bash -c "$(curl -sL https://git.io/vokNn)"
-> 
-> $ apt-fast install -y build-essential software-properties-common byobu git htop man unzip vim cmake
+> $ bash ./scripts/rename-home-directory.sh
 > ```
 >
-> B. Set Up NVIDIA Driver
+> ウィンドウが出てきたら`Update names`を選択する  
+>
+> 
+>
+> ##### フォルダ名を日本語に戻したい場合
 >
 > ```bash
-> $ apt-fast install -y nvidia-340 libnvidia-cfg1-390 libnvidia-common-390 libnvidia-computee-390 libnvidia-decode-390 libnvidia-encode-390 libnvidia-fbc1-390 libnvidia-gl-390 libnvidia-ifr1-390 nvidia-dkms-390 nvidia-driver390 nvidia-kernel-common-390 nvidia-kernel-source-390 nvidia-modprobe nvidia-opencl-dev nvidia-settings nvidia-utils-390 xserver-xorg-video-nvidia-390
+> $ xdg-user-dirs-gtk-update
 > ```
 >
-
-
-
-
-
-### 1. Set Up OpenCV
-
-*Description* :
-
-​	Install 3.3.0 version of OpenCV
-
-
-
-*Run Script*
-
-```bash
-$ bash ./install-opencv.sh
-```
-
-> 途中にLocation, Time Zoneを答えないと一向に進まないため注意する  
+> ウィンドウが出てきたら`選択する`を選択する
 >
-> Location => Tokyo  
+> 
 >
-> Time Zone => Asia  
-
-
-
-
-
-### 2. Set Up CUDA
-
-*Description* :
-
-​	Install 10.0 version of CUDA
-
-
-
-*Run Script*
-
-```bash
-$ bash　./install-cuda.sh
-```
-
-> スクリプト終了後1度再起動すること
+> - ところどころ日本語表示が文字化けするため、言語を英語に変えておけば文字化けしない（変更後は再起動）
+>
+> ###### 言語を英語に変更
 >
 > ```bash
+> $ bash ./scripts/change-locale-en.sh
+> ```
+>
+> 
+>
+> ###### 言語を日本語に変換
+>
+> ```bash
+> $ bash ./scripts/change-locale-ja.sh
+> ```
+
+
+
+##### CUIに切り替える
+
+```bash
+$ sudo systemctl set-default multi-user.target
+$ sudo reboot
+```
+
+
+
+> ######  GUIに戻したい場合
+>
+> ```bash
+> $ sudo systemctl set-default graphical.target
 > $ sudo reboot
 > ```
 
 
 
-**Check if installed**
+
+
+### 1. CUDAのセットアップ
+
+###### *Description* :
+
+​	バージョン：10.0
+
+
+
+###### *Run Script*
+
+```bash
+$ bash　./install-cuda.sh
+```
+
+> ##### スクリプト終了後1度再起動すること
+>
+> ```bash
+> $ sudo reboot
+> ```
+
+  
+
+##### インストールされているかどうかの確認
 
 ```bash
 $ nvcc --version
 ```
 
-> **Result Example** : 
+> ##### Result Exmple : 
 >
 > ```
 > nvcc: NVIDIA (R) Cuda compiler driver
@@ -151,22 +163,79 @@ $ nvcc --version
 > Built on Sat_Aug_25_21:08:01_CDT_2018
 > Cuda compilation tools, release 10.0, V10.0.130
 > ```
+>
+> もし、`bash: nvcc: command not found`が出力された場合は、`.　~/.bashrc`でスクリプトを読み込ませてからもう一度実行する
 
 
 
 
 
-### 3. Set Up cuDNN
+### 2. cuDNNのセットアップ
 
-*Description* : 
+###### *Description* : 
 
-+ install cudnn of 8.0.0 version
-
-> ※ https://developer.nvidia.com/rdp/cudnn-download にログインしておくこと
+​	バージョン：7.6.0
 
 
 
-*Run Script*
+> 1. ###### ブラウザから`.deb`をダウンロードする場合
+>
+>    1. https://developer.nvidia.com/rdp/cudnn-download をブラウザで開いてログインする（必要に応じてアカウントを作る・Googleなどと連携する）
+>
+>    2. ```
+>       cuDNN Library for Linux
+>       
+>       cuDNN Runtime Library for Ubuntu18.04 [Deb]
+>       cuDNN Developer Library for Ubuntu18.04 [Deb]
+>       cuDNN Code Samples and User Guide for Ubuntu18.04 [Deb]
+>       ```
+>
+>    上記の3ファイルをダウンロードする
+>
+>    
+>
+> 2. ###### gitリポジトリを落とす場合
+>
+>    1. ```bash
+>       $ git clone https://gitlab.com/ichiya/setup-cudnn.git
+>       ```
+
+
+
+
+
+```bash
+# bash にかくやつ
+sudo mv ~/Downloads/libcudnn*.deb ./
+sudo mv ~/Downloads/cudnn-*.tgz ./
+
+sudo dpkg -i libcudnn7_7.3.0.29–1+cuda10.0_amd64.deb
+sudo dpkg -i libcudnn7-dev_7.3.0.29–1+cuda10.0_amd64.deb
+sudo dpkg -i libcudnn7-doc_7.3.0.29–1+cuda10.0_amd64.deb
+
+tar -xzvf cudnn-10.0-linux-x64-v7.6.0.64.tgz
+
+sudo cp -a cuda/lib64/* /usr/local/cuda/lib64/
+sudo cp -a cuda/include/* /usr/local/cuda/include/
+
+cp -r /usr/src/cudnn_samples_v7/ ~/
+cd ~/cudnn_samples_v7/mnistCUDNN/
+make clean && make
+
+# occured error => c/c++ 6
+sudo apt install gcc-6 g++-6
+
+sudo ln -s /usr/bin/gcc-6 /usr/local/cuda/bin/gcc
+sudo ln -s /usr/bin/g++-6 /usr/local/cuda/bin/g++
+
+cd ~/cudnn_samples_v7/mnistCUDNN
+make clean && make
+./mnistCUDNN
+```
+
+
+
+###### *Run Script*
 
 ```bash
 $ bash ./install-cudnn.sh
@@ -174,31 +243,69 @@ $ bash ./install-cudnn.sh
 
 
 
-**confirm**
+##### インストールされているかどうかの確認
 
 ```bash
-$ cat ? ls ?
+$ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 
-> **Result Example** : 
+> ##### Result Exmple : 
 >
+> ```
+> #define CUDNN_MAJOR 7
+> #define CUDNN_MINOR 6
+> #define CUDNN_PATCHLEVEL 0
+> --
+> #define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
 > 
+> #include "driver_types.h"
+> ```
+>
+> 上の場合だとバージョンは`7.6.0`
 
 
 
 
 
-### 4. Build Darknet
+### 3. OpenCVのセットアップ
 
-*Description* : 
+###### *Description* :
 
-+ clone repository : `https://github.com/alexeyAB/darknet.git`
-+ clone repository : `https://github.com/kazuya0202/Makefile-for-darkent.git`
-+ edit `Makefile`
+​	バージョン：3.3.0
 
 
 
-*Run Script*
+###### *Run Script*
+
+```bash
+$ bash ./install-opencv.sh
+```
+
+> 途中に`Location` , `Time Zone`を答えないと一向に進まないため注意する  
+
+
+
+
+
+### 4. Darknetのビルド
+
+###### *Description* : 
+
++ リポジトリのクローン
+
+  ```http
+  # github
+  https://github.com/alexeyAB/darknet.git
+  https://github.com/kazuya0202/Makefile-for-darkent.git
+  ```
+
++ `Makefile`を編集する
+
+  + `GPU` / `CUDNN` / `OPENCV`を有効にする
+
+
+
+###### *Run Script*
 
 ```bash
 $ bash ./install-darknet.sh
@@ -208,14 +315,23 @@ $ bash ./install-darknet.sh
 
 
 
-### 5. Set Up Learning Environment
+### 5. 学習環境のセットアップ
 
-*Description* : follow the repository : `https://github.com/alexeyAB/darknet.git`
+###### *Description* :
+
+```http
+# 以下のREADMEに従う
+https://github.com/alexeyAB/darknet.git
+```
+
++ `dir: XXX`は現在のディレクトリを表す
+
+
 
 1. 学習にひつような設定ファイル・画像ファイルなどをまとめるディレクトリを作成する
 
    ```bash
-   # directory : /home/{USER_NAME}/darknet
+   # dir : /home/{USER_NAME}/darknet
    $ mkdir -p task/backup/
    ```
 
@@ -224,7 +340,7 @@ $ bash ./install-darknet.sh
 2. `yolov3.cfg`をコピーして`yolo-obj.cfg`ファイルを作る
 
    ```bash
-   # directory : /home/{USER_NAME}/darknet/cfg
+   # dir : /home/{USER_NAME}/darknet/cfg
    $ cp yolov3.cfg yolo-obj.cfg
    $ mv yolo-obj.cfg ../task/
    ```
@@ -268,41 +384,45 @@ $ bash ./install-darknet.sh
      >   (classes + 5) * 3
      >   ```
      >
-     >   **Example** :
+     >   ##### Example :
      >
      >   ```bash
      >   classes=1 ---> filters=18
      >   classes=2 ---> filters=21
      >   ```
+     
+     
 
 3. `obj.names`を作成する
 
    + ```bash
-     # directory : /home/{USER_NAME}/darknet/task
+     # dir : /home/{USER_NAME}/darknet/task
      $ touch obj.names
      $ vim obj.names
      ```
 
      > オブジェクトの名前を一行ごとに記述する（クラス数分）
      >
-     >  **Example** :
+     >  ##### Example :
      >
      > ```bash
      > Railroad crossing	# 踏切
      > Car					# 車
      > ```
+     
+     
 
 4. `obj.data`を作成する
 
    + ```bash
-     # directory : /home/{USER_NAME}/darknet/task
+     # dir : /home/{USER_NAME}/darknet/task
      $ touch obj.data
      $ vim obj.data
      ```
 
      > 書式は以下のようにする
      >
-     > **Example** :
+     > ##### Example :
      >
      > ```
      > classes = 2
@@ -311,6 +431,8 @@ $ bash ./install-darknet.sh
      > names   = task/obj.names
      > backup  = task/backup/
      > ```
+     
+     
 
 5. 画像のラベル付けする
 
@@ -329,18 +451,23 @@ $ bash ./install-darknet.sh
      > > 画像ファイルを`.jpg`に統一 & ファイル名を連番にする
      > >
      > > ```bash
-     > > $ bash ./rename-seq.sh
+     > > $ bash ./jpg-rename.sh
      > > ```
+     > >
+     > > エラーのようにメッセージが出力されるが実行できているため気にする必要はない
      >
-     > 
+     
+     
 
 6. 画像ファイル・テキストファイルを`datasets`の中に入れる
 
    + ```bash
-     # directory : /home/{USER_NAME}/darknet/task
+     # dir : /home/{USER_NAME}/darknet/task
      $ mkdir datasets
      $ mv {path}/car**.jpg datasets/
      $ mv {path}/car**.txt datasets/
      ```
+     
+     
 
 7.
