@@ -9,6 +9,8 @@ https://github.com/kazuya0202/setup-darknet.git
 
   
 
+
+
 | Install Package | Version |
 | :-------------: | :-----: |
 |  NVIDIA Driver  |    -    |
@@ -16,7 +18,9 @@ https://github.com/kazuya0202/setup-darknet.git
 |      CUDA       |  10.0   |
 |      cuDNN      |  7.6.0  |
 
-    
+   
+
+
 
 # め～も～
 
@@ -36,9 +40,10 @@ $ cmake /* ... */ -D WITH_CUDA=OFF ..
 + [1. Set Up OpenCV](#1.-set-up-opencv)
 + [2. Set Up CUDA](#2.-set-up-cuda)
 + [3. Set Up cuDNN](#3.-set-up-cudnn)
-+ [4. Build Darknet](#4.-build-darknet)  
++ [4. Build Darknet](#4.-build-darknet)
 
   
+
 
 ### 0. 環境構築の前に必要なものをインストールする
 
@@ -47,6 +52,7 @@ $ cmake /* ... */ -D WITH_CUDA=OFF ..
 + apt-fast / cmake / build-essential ...
 
   
+
 
 ###### *Run Script*
 
@@ -58,8 +64,8 @@ $ bash ./prepare.sh
 ```
 
   
-
   
+ 
 
 ##  < 重要 >
 
@@ -183,22 +189,29 @@ $ nvcc --version
 >    1. https://developer.nvidia.com/rdp/cudnn-download をブラウザで開いてログインする（必要に応じてアカウントを作る・Googleなどと連携する）
 >
 >    2. ```
->       cuDNN Library for Linux
->       
->       cuDNN Runtime Library for Ubuntu18.04 [Deb]
->       cuDNN Developer Library for Ubuntu18.04 [Deb]
->       cuDNN Code Samples and User Guide for Ubuntu18.04 [Deb]
->       ```
+>      cuDNN Library for Linux
+>      ```
+>    
+>    cuDNN Runtime Library for Ubuntu18.04 [Deb]
+>    cuDNN Developer Library for Ubuntu18.04 [Deb]
+>    cuDNN Code Samples and User Guide for Ubuntu18.04 [Deb]
+>    
+>    ```
+>    
+>    ```
 >
->    上記の3ファイルをダウンロードする
+> 上記の3ファイルをダウンロードする
 >
->      
+>   
 >
 > 2. ###### gitリポジトリを落とす場合
 >
 >    1. ```bash
->       $ git clone https://gitlab.com/ichiya/setup-cudnn.git
->       ```
+>      $ git clone https://gitlab.com/ichiya/setup-cudnn.git
+>      ```
+>    ```
+>    
+>    ```
 
   
 
