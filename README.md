@@ -7,7 +7,7 @@
 https://github.com/kazuya0202/setup-darknet.git
 ```
 
-
+<br>
 
 | Install Package | Version |
 | :-------------: | :-----: |
@@ -16,7 +16,7 @@ https://github.com/kazuya0202/setup-darknet.git
 |      CUDA       |  10.0   |
 |      cuDNN      |  7.6.0  |
 
- 
+<br>
 
 # め～も～
 
@@ -25,29 +25,29 @@ https://github.com/kazuya0202/setup-darknet.git
 
 # CUDA=OFF にして cmake
 $ cmake /* ... */ -D WITH_CUDA=OFF ..
-
 ```
 
-
+<br>
 
 #### もくじ
 
-- [0. Prepare For Install](#0.-prepare-for-install)
-- [1. Set Up OpenCV](#1.-set-up-opencv)
-- [2. Set Up CUDA](#2.-set-up-cuda)
-- [3. Set Up cuDNN](#3.-set-up-cudnn)
-- [4. Build Darknet](#4.-build-darknet)
++ [0. Prepare For Install](#0.-prepare-for-install)
++ [1. Set Up OpenCV](#1.-set-up-opencv)
++ [2. Set Up CUDA](#2.-set-up-cuda)
++ [3. Set Up cuDNN](#3.-set-up-cudnn)
++ [4. Build Darknet](#4.-build-darknet)
 
-  
+<br>
 
+<br>
 
 ### 0. 環境構築の前に必要なものをインストールする
 
 ###### *Packages* : 
 
-- apt-fast / cmake / build-essential ...
++ apt-fast / cmake / build-essential ...
 
-  
+<br>
 
 
 ###### *Run Script*
@@ -59,17 +59,15 @@ $ git clone https://github.com/kazuya0202/setup-darknet-linux.git
 $ bash ./prepare.sh
 ```
 
-  
-  
- 
+  <br>
 
-## < 重要 >
+##  < 重要 >
 
-#### 〇 <u>CUIにして実行すること</u>
+#### 	〇 <u>CUIにして実行すること</u>
 
-  
+<br>
 
-> - Virtual Boxで試したときは、CUIに切り替えると日本語がに文字化けするため、あらかじめフォルダ名を英語に変えておくとよい ▼
+> + Virtual Boxで試したときは、CUIに切り替えると日本語がに文字化けするため、あらかじめフォルダ名を英語に変えておくとよい ▼
 >
 > ##### 初期フォルダ名の変換スクリプト
 >
@@ -79,7 +77,7 @@ $ bash ./prepare.sh
 >
 > ウィンドウが出てきたら`Update names`を選択する  
 >
-> 
+>   <br>
 >
 > ##### フォルダ名を日本語に戻したい場合
 >
@@ -89,7 +87,7 @@ $ bash ./prepare.sh
 >
 > ウィンドウが出てきたら`選択する`を選択する
 >
-> 
+>   <br>
 >
 > - ところどころ日本語表示が文字化けするため、言語を英語に変えておけば文字化けしない（変更後は再起動）
 >
@@ -99,7 +97,7 @@ $ bash ./prepare.sh
 > $ bash ./scripts/change-locale-en.sh
 > ```
 >
-> 
+>   
 >
 > ###### 言語を日本語に変換
 >
@@ -107,7 +105,7 @@ $ bash ./prepare.sh
 > $ bash ./scripts/change-locale-ja.sh
 > ```
 
-  
+<br>
 
 ##### CUIに切り替える
 
@@ -116,18 +114,18 @@ $ sudo systemctl set-default multi-user.target
 $ sudo reboot
 ```
 
-  
+<br>
 
-> ###### GUIに戻したい場合
+> ######  GUIに戻したい場合
 >
 > ```bash
 > $ sudo systemctl set-default graphical.target
 > $ sudo reboot
 > ```
 
-  
+<br>
 
-  
+<br>
 
 ### 1. CUDAのセットアップ
 
@@ -135,7 +133,7 @@ $ sudo reboot
 
 ​	バージョン：10.0
 
-  
+<br>
 
 ###### *Run Script*
 
@@ -149,7 +147,7 @@ $ bash　./install-cuda.sh
 > $ sudo reboot
 > ```
 
-    
+<br>
 
 ##### インストールされているかどうかの確認
 
@@ -168,9 +166,9 @@ $ nvcc --version
 >
 > もし、`bash: nvcc: command not found`が出力された場合は、`.　~/.bashrc`でスクリプトを読み込ませてからもう一度実行する
 
-  
+<br>
 
-  
+<br>
 
 ### 2. cuDNNのセットアップ
 
@@ -178,7 +176,7 @@ $ nvcc --version
 
 ​	バージョン：7.6.0
 
-  
+<br>
 
 > 1. ###### ブラウザから`.deb`をダウンロードする場合
 >
@@ -186,33 +184,25 @@ $ nvcc --version
 >
 >    2. ```
 >       cuDNN Library for Linux
+>       
+>       cuDNN Runtime Library for Ubuntu18.04 [Deb]
+>       cuDNN Developer Library for Ubuntu18.04 [Deb]
+>       cuDNN Code Samples and User Guide for Ubuntu18.04 [Deb]
 >       ```
+>       
+>       上記の3ファイルをダウンロードする
 >
->    cuDNN Runtime Library for Ubuntu18.04 [Deb]
->    cuDNN Developer Library for Ubuntu18.04 [Deb]
->    cuDNN Code Samples and User Guide for Ubuntu18.04 [Deb]
+> <br>
 >
->    ```
->    
->    ```
->
-> 上記の3ファイルをダウンロードする
->
->   
->
-> 2. ###### gitリポジトリを落とす場合
->
->    1. ```bash
->       $ git clone https://gitlab.com/ichiya/setup-cudnn.git
->       ```
->
->    ```
->    
->    ```
+> 1. ###### gitリポジトリを落とす場合
+> ```bash
+> ​```bash
+>   $ git clone https://gitlab.com/ichiya/setup-cudnn.git
+> ```
 
-  
+<br>
 
-  
+<br>
 
 ```bash
 # bash にかくやつ
@@ -243,7 +233,7 @@ make clean && make
 ./mnistCUDNN
 ```
 
-  
+<br>
 
 ###### *Run Script*
 
@@ -251,7 +241,7 @@ make clean && make
 $ bash ./install-cudnn.sh
 ```
 
-  
+<br>
 
 ##### インストールされているかどうかの確認
 
@@ -273,9 +263,9 @@ $ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 >
 > 上の場合だとバージョンは`7.6.0`
 
-  
+<br>
 
-  
+<br>
 
 ### 3. OpenCVのセットアップ
 
@@ -283,7 +273,7 @@ $ cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 
 ​	バージョン：3.3.0
 
-  
+<br>
 
 ###### *Run Script*
 
@@ -293,15 +283,15 @@ $ bash ./install-opencv.sh
 
 > 途中に`Location` , `Time Zone`を答えないと一向に進まないため注意する  
 
-  
+<br>
 
-  
+<br>
 
 ### 4. Darknetのビルド
 
 ###### *Description* : 
 
-- リポジトリのクローン
++ リポジトリのクローン
 
   ```http
   # github
@@ -309,11 +299,12 @@ $ bash ./install-opencv.sh
   https://github.com/kazuya0202/Makefile-for-darkent.git
   ```
 
-- `Makefile`を編集する
++ `Makefile`を編集する
 
-  - `GPU` / `CUDNN` / `OPENCV`を有効にする
+  + `GPU` / `CUDNN` / `OPENCV`を有効にする
 
-  
+
+<br>
 
 ###### *Run Script*
 
@@ -321,9 +312,9 @@ $ bash ./install-opencv.sh
 $ bash ./install-darknet.sh
 ```
 
-  
+<br>
 
-  
+<br>
 
 ### 5. 学習環境のセットアップ
 
@@ -334,18 +325,18 @@ $ bash ./install-darknet.sh
 https://github.com/alexeyAB/darknet.git
 ```
 
-- `dir: XXX`は現在のディレクトリを表す
++ `dir: XXX`は現在のディレクトリを表す
 
-  
+<br>
 
 1. 学習にひつような設定ファイル・画像ファイルなどをまとめるディレクトリを作成する
 
    ```bash
    # dir : /home/{USER_NAME}/darknet
-   $ mkdir -p task/backup/
+   $ mkdir -p task/backup/  
    ```
 
-     
+   <br>
 
 2. `yolov3.cfg`をコピーして`yolo-obj.cfg`ファイルを作る
 
@@ -355,7 +346,7 @@ https://github.com/alexeyAB/darknet.git
    $ mv yolo-obj.cfg ../task/
    ```
 
-   - `yolo-obj.cfg`の数値を変更する
+   + `yolo-obj.cfg`の数値を変更する
 
      ```bash
      batch=64
@@ -378,34 +369,34 @@ https://github.com/alexeyAB/darknet.git
      classes=2
      ```
 
-     > - 学習を開始したときに、GPUのメモリの関係でエラーが発生して中断したときは`subdivision`の値を変更すること
+     > + 学習を開始したときに、GPUのメモリの関係でエラーが発生して中断したときは`subdivision`の値を変更すること
      >
-     > ```bash
-     > subdivision=16	# next to 8
-     > subdivision=32	# next to 16
-     > subdivision=64	# next to 32
-     > ```
+     >   ```bash
+     >   subdivision=16	# next to 8
+     >   subdivision=32	# next to 16
+     >   subdivision=64	# next to 32
+     >   ```
      >
-     >  
+     >     <br>
      >
-     > - `filters`の数値は以下の式で計算する
+     > + `filters`の数値は以下の式で計算する
      >
-     > ```bash
-     > (classes + 5) * 3
-     > ```
+     >   ```bash
+     >   (classes + 5) * 3
+     >   ```
      >
-     > ##### Example :
+     >   ##### Example :
      >
-     > ```bash
-     > classes=1 ---> filters=18
-     > classes=2 ---> filters=21
-     > ```
-
-       
+     >   ```bash
+     >   classes=1 ---> filters=18
+     >   classes=2 ---> filters=21
+     >   ```
+     
+       <br>
 
 3. `obj.names`を作成する
 
-   - ```bash
+   + ```bash
      # dir : /home/{USER_NAME}/darknet/task
      $ touch obj.names
      $ vim obj.names
@@ -413,18 +404,18 @@ https://github.com/alexeyAB/darknet.git
 
      > オブジェクトの名前を一行ごとに記述する（クラス数分）
      >
-     > ##### Example :
+     >  ##### Example :
      >
      > ```bash
      > Railroad crossing	# 踏切
      > Car					# 車
      > ```
-
-       
+     
+       <br>
 
 4. `obj.data`を作成する
 
-   - ```bash
+   + ```bash
      # dir : /home/{USER_NAME}/darknet/task
      $ touch obj.data
      $ vim obj.data
@@ -441,8 +432,8 @@ https://github.com/alexeyAB/darknet.git
      > names   = task/obj.names
      > backup  = task/backup/
      > ```
-
-       
+     
+       <br>
 
 5. 画像のラベル付けする
 
@@ -456,7 +447,7 @@ https://github.com/alexeyAB/darknet.git
      > $ bash ./clone-blt.sh
      > ```
      >
-     > 
+     >   <br>
      >
      > > 画像ファイルを`.jpg`に統一 & ファイル名を連番にする
      > >
@@ -465,18 +456,21 @@ https://github.com/alexeyAB/darknet.git
      > > ```
      > >
      > > エラーのようにメッセージが出力されるが実行できているため気にする必要はない
+     >
+     
 
-       
+   <br>
 
 6. 画像ファイル・テキストファイルを`datasets`の中に入れる
 
-   - ```bash
+   + ```bash
      # dir : /home/{USER_NAME}/darknet/task
      $ mkdir datasets
      $ mv {path}/car**.jpg datasets/
      $ mv {path}/car**.txt datasets/
      ```
+     
 
-       
+   <br>
 
 7.
