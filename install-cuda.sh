@@ -58,12 +58,12 @@ echo 'export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:${LD_LIBRARY_PATH}' >> ~
 # https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
 
 # cuDNN:
-aria2c -x5 https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.6.0.64/prod/10.0_20190516/cudnn-10.0-linux-x64-v7.6.0.64.tgz
+# aria2c -x5 https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.6.0.64/prod/10.0_20190516/cudnn-10.0-linux-x64-v7.6.0.64.tgz
 
 
-tar -xzvf cudnn-10.0-linux-x64-v7.6.0.64.tgz
-sudo cp -a cuda/lib64/* /usr/lib/cuda/lib64/
-sudo cp -a cuda/include/* /usr/lib/cuda/include/
-# sudo ldconfig
+# tar -xzvf cudnn-10.0-linux-x64-v7.6.0.64.tgz
+# sudo cp -a cuda/lib64/* /usr/lib/cuda/lib64/
+# sudo cp -a cuda/include/* /usr/lib/cuda/include/
+# # sudo ldconfig
 
-. ~/.bashrc
+# . ~/.bashrc
