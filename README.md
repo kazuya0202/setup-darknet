@@ -7,7 +7,6 @@
 https://github.com/kazuya0202/setup-darknet.git
 ```
 
-<br>
 
 
 | Install Package | Version |
@@ -17,8 +16,7 @@ https://github.com/kazuya0202/setup-darknet.git
 |      CUDA       |  10.0   |
 |      cuDNN      |  7.6.0  |
 
- <br>
-
+ 
 
 # め～も～
 
@@ -30,15 +28,15 @@ $ cmake /* ... */ -D WITH_CUDA=OFF ..
 
 ```
 
-<br>
+
 
 #### もくじ
 
-+ [0. Prepare For Install](#0.-prepare-for-install)
-+ [1. Set Up OpenCV](#1.-set-up-opencv)
-+ [2. Set Up CUDA](#2.-set-up-cuda)
-+ [3. Set Up cuDNN](#3.-set-up-cudnn)
-+ [4. Build Darknet](#4.-build-darknet)
+- [0. Prepare For Install](#0.-prepare-for-install)
+- [1. Set Up OpenCV](#1.-set-up-opencv)
+- [2. Set Up CUDA](#2.-set-up-cuda)
+- [3. Set Up cuDNN](#3.-set-up-cudnn)
+- [4. Build Darknet](#4.-build-darknet)
 
   
 
@@ -47,7 +45,7 @@ $ cmake /* ... */ -D WITH_CUDA=OFF ..
 
 ###### *Packages* : 
 
-+ apt-fast / cmake / build-essential ...
+- apt-fast / cmake / build-essential ...
 
   
 
@@ -65,13 +63,13 @@ $ bash ./prepare.sh
   
  
 
-##  < 重要 >
+## < 重要 >
 
-#### 	〇 <u>CUIにして実行すること</u>
+#### 〇 <u>CUIにして実行すること</u>
 
   
 
-> + Virtual Boxで試したときは、CUIに切り替えると日本語がに文字化けするため、あらかじめフォルダ名を英語に変えておくとよい ▼
+> - Virtual Boxで試したときは、CUIに切り替えると日本語がに文字化けするため、あらかじめフォルダ名を英語に変えておくとよい ▼
 >
 > ##### 初期フォルダ名の変換スクリプト
 >
@@ -81,7 +79,7 @@ $ bash ./prepare.sh
 >
 > ウィンドウが出てきたら`Update names`を選択する  
 >
->   
+> 
 >
 > ##### フォルダ名を日本語に戻したい場合
 >
@@ -91,7 +89,7 @@ $ bash ./prepare.sh
 >
 > ウィンドウが出てきたら`選択する`を選択する
 >
->   
+> 
 >
 > - ところどころ日本語表示が文字化けするため、言語を英語に変えておけば文字化けしない（変更後は再起動）
 >
@@ -101,7 +99,7 @@ $ bash ./prepare.sh
 > $ bash ./scripts/change-locale-en.sh
 > ```
 >
->   
+> 
 >
 > ###### 言語を日本語に変換
 >
@@ -120,7 +118,7 @@ $ sudo reboot
 
   
 
-> ######  GUIに戻したい場合
+> ###### GUIに戻したい場合
 >
 > ```bash
 > $ sudo systemctl set-default graphical.target
@@ -187,13 +185,13 @@ $ nvcc --version
 >    1. https://developer.nvidia.com/rdp/cudnn-download をブラウザで開いてログインする（必要に応じてアカウントを作る・Googleなどと連携する）
 >
 >    2. ```
->      cuDNN Library for Linux
->      ```
->    
+>       cuDNN Library for Linux
+>       ```
+>
 >    cuDNN Runtime Library for Ubuntu18.04 [Deb]
 >    cuDNN Developer Library for Ubuntu18.04 [Deb]
 >    cuDNN Code Samples and User Guide for Ubuntu18.04 [Deb]
->    
+>
 >    ```
 >    
 >    ```
@@ -205,8 +203,9 @@ $ nvcc --version
 > 2. ###### gitリポジトリを落とす場合
 >
 >    1. ```bash
->      $ git clone https://gitlab.com/ichiya/setup-cudnn.git
->      ```
+>       $ git clone https://gitlab.com/ichiya/setup-cudnn.git
+>       ```
+>
 >    ```
 >    
 >    ```
@@ -302,7 +301,7 @@ $ bash ./install-opencv.sh
 
 ###### *Description* : 
 
-+ リポジトリのクローン
+- リポジトリのクローン
 
   ```http
   # github
@@ -310,9 +309,9 @@ $ bash ./install-opencv.sh
   https://github.com/kazuya0202/Makefile-for-darkent.git
   ```
 
-+ `Makefile`を編集する
+- `Makefile`を編集する
 
-  + `GPU` / `CUDNN` / `OPENCV`を有効にする
+  - `GPU` / `CUDNN` / `OPENCV`を有効にする
 
   
 
@@ -335,7 +334,7 @@ $ bash ./install-darknet.sh
 https://github.com/alexeyAB/darknet.git
 ```
 
-+ `dir: XXX`は現在のディレクトリを表す
+- `dir: XXX`は現在のディレクトリを表す
 
   
 
@@ -356,7 +355,7 @@ https://github.com/alexeyAB/darknet.git
    $ mv yolo-obj.cfg ../task/
    ```
 
-   + `yolo-obj.cfg`の数値を変更する
+   - `yolo-obj.cfg`の数値を変更する
 
      ```bash
      batch=64
@@ -379,34 +378,34 @@ https://github.com/alexeyAB/darknet.git
      classes=2
      ```
 
-     > + 学習を開始したときに、GPUのメモリの関係でエラーが発生して中断したときは`subdivision`の値を変更すること
+     > - 学習を開始したときに、GPUのメモリの関係でエラーが発生して中断したときは`subdivision`の値を変更すること
      >
-     >   ```bash
-     >   subdivision=16	# next to 8
-     >   subdivision=32	# next to 16
-     >   subdivision=64	# next to 32
-     >   ```
+     > ```bash
+     > subdivision=16	# next to 8
+     > subdivision=32	# next to 16
+     > subdivision=64	# next to 32
+     > ```
      >
-     >     
+     >  
      >
-     > + `filters`の数値は以下の式で計算する
+     > - `filters`の数値は以下の式で計算する
      >
-     >   ```bash
-     >   (classes + 5) * 3
-     >   ```
+     > ```bash
+     > (classes + 5) * 3
+     > ```
      >
-     >   ##### Example :
+     > ##### Example :
      >
-     >   ```bash
-     >   classes=1 ---> filters=18
-     >   classes=2 ---> filters=21
-     >   ```
-     
+     > ```bash
+     > classes=1 ---> filters=18
+     > classes=2 ---> filters=21
+     > ```
+
        
 
 3. `obj.names`を作成する
 
-   + ```bash
+   - ```bash
      # dir : /home/{USER_NAME}/darknet/task
      $ touch obj.names
      $ vim obj.names
@@ -414,18 +413,18 @@ https://github.com/alexeyAB/darknet.git
 
      > オブジェクトの名前を一行ごとに記述する（クラス数分）
      >
-     >  ##### Example :
+     > ##### Example :
      >
      > ```bash
      > Railroad crossing	# 踏切
      > Car					# 車
      > ```
-     
+
        
 
 4. `obj.data`を作成する
 
-   + ```bash
+   - ```bash
      # dir : /home/{USER_NAME}/darknet/task
      $ touch obj.data
      $ vim obj.data
@@ -442,7 +441,7 @@ https://github.com/alexeyAB/darknet.git
      > names   = task/obj.names
      > backup  = task/backup/
      > ```
-     
+
        
 
 5. 画像のラベル付けする
@@ -457,7 +456,7 @@ https://github.com/alexeyAB/darknet.git
      > $ bash ./clone-blt.sh
      > ```
      >
-     >   
+     > 
      >
      > > 画像ファイルを`.jpg`に統一 & ファイル名を連番にする
      > >
@@ -466,19 +465,18 @@ https://github.com/alexeyAB/darknet.git
      > > ```
      > >
      > > エラーのようにメッセージが出力されるが実行できているため気にする必要はない
-     >
-     
+
        
 
 6. 画像ファイル・テキストファイルを`datasets`の中に入れる
 
-   + ```bash
+   - ```bash
      # dir : /home/{USER_NAME}/darknet/task
      $ mkdir datasets
      $ mv {path}/car**.jpg datasets/
      $ mv {path}/car**.txt datasets/
      ```
-     
+
        
 
 7.
