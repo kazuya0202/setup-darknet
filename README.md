@@ -189,7 +189,7 @@
 
 ## OpenCV セットアップ
 
-1. [**OpenCV - Releases](https://opencv.org/releases/) からバージョン`3.4.6`の`Windows`をダウンロード（3.4.6でなくても3.x.xならOK）**
+1. **[OpenCV - Releases](https://opencv.org/releases/) からバージョン`3.4.6`の`Windows`をダウンロード（3.4.6でなくても3.x.xならOK）**
 
    <br>
 
