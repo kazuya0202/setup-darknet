@@ -27,7 +27,7 @@
 
 
 
-2. ##### Version : `10` ／ Installer Type : `exe [network]` を選択し、Base Installer をダウンロード![1561460159013](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561460159013.png)
+2. ##### Version : `10` ／ Installer Type : `exe [network]` を選択し、Base Installer をダウンロード![1561460159013](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561460159013.png)
 
 <br>
 
@@ -244,7 +244,7 @@
 
 4. ##### ソリューション（darknet）を右クリック > `プロジェクトの再ターゲット` > `OKを選択`
 
-   ![1561472100160](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561472100160.png)
+   ![1561472100160](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561472100160.png)
 
    
 
@@ -254,7 +254,7 @@
 
      1. `C/C++` > `全般` > `追加のインクルードディレクトリ` > `▼` > `編集` をクリックする。
 
-        ![1561472386937](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561472386937.png)
+        ![1561472386937](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561472386937.png)
 
         <br>
 
@@ -264,7 +264,7 @@
         C:\opencv_346\build\include
         ```
 
-        ![1561472503506](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561472503506.png)
+        ![1561472503506](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561472503506.png)
 
         <br>
 
@@ -272,7 +272,7 @@
 
      1. `リンカー` > `追加のライブラリディレクトリ` > `▼` > `編集`をクリックする。
 
-        ![1561473145522](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561473145522.png)
+        ![1561473145522](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473145522.png)
 
         <br>
 
@@ -282,7 +282,7 @@
         C:\opencv_346\build\x64\vc15\lib
         ```
 
-        ![1561473268096](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561473268096.png)
+        ![1561473268096](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473268096.png)
 
         <br>
 
@@ -290,13 +290,13 @@
 
      1. ソリューションを右クリック > `ビルドの依存関係` > `ビルドのカスタマイズ`
 
-        ![1561473401067](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561473401067.png)
+        ![1561473401067](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473401067.png)
 
         <br>
 
      2. すでについているチェックを外し、`CUDA 10.0`を選択して`OK`をクリック
 
-        ![1561473576079](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561473576079.png)
+        ![1561473576079](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473576079.png)
 
      <br>
 
@@ -304,7 +304,7 @@
 
    + ビルドを`Release` / `x64`にする
 
-   ![1561473703555](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561473703555.png)
+   ![1561473703555](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473703555.png)
 
    <br>
 
@@ -324,7 +324,7 @@
      C:\opencv_346\build\include
      ```
 
-     ![1561474407859](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561474407859.png)
+     ![1561474407859](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561474407859.png)
 
      <br>
 
@@ -334,7 +334,7 @@
      C:\opencv_346\build\x64/vc14\lib
      ```
 
-     ![1561474360504](C:\Users\kazuya\AppData\Roaming\Typora\typora-user-images\1561474360504.png)
+     ![1561474360504](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561474360504.png)
 
    <br>
 
