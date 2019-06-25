@@ -23,11 +23,11 @@
 
 ## CUDA セットアップ
 
-1. #### [NVIDIA Toolkit - CUDA10.0 Archive](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork) からインストーラをダウンロード
+1. **[NVIDIA Toolkit - CUDA10.0 Archive](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork) からインストーラをダウンロード**
 
 
 
-2. #### Version : `10` ／ Installer Type : `exe [network]` を選択し、Base Installer をダウンロード![1561460159013](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561460159013.png)
+2. **Version : `10` ／ Installer Type : `exe [network]` を選択し、Base Installer をダウンロード**![1561460159013](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561460159013.png)
 
 <br>
 
@@ -349,7 +349,7 @@
 
    <br>
 
-9. #### ビルドが正常にできたのか検証
+9. **ビルドが正常にできたのか検証**
 
    1. [https://pjreddie.com/media/files/yolov3.weights](https://pjreddie.com/media/files/yolov3.weights) から学習済みデータをダウンロード（ここでは`darknet/`に置く）
 
