@@ -1,10 +1,3 @@
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script language="JavaScript">
-$(document).ready( function () {
-   $("a[href^='http']").attr('target', '_blank');
-})
-</script>
-
 # Darknet 環境構築 on Windows
 
 （2019 / 6 / 25 現在）
