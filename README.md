@@ -6,7 +6,7 @@
 
 *Description :* 
 
-+ [kazuya0202/setup-darknet.git](https://github.con/kazuya0202/setup-darknet.git)
++ [kazuya0202/setup-darknet.git](https://github.con/kazuya0202/setup-darknet.git){:target="_blank"}
 + Visual Studio 2019をインストールする予定の場合は先にインストールしておいた方が良い
 
 <br>
@@ -23,7 +23,7 @@
 
 ## CUDA セットアップ
 
-1. **[NVIDIA Toolkit - CUDA10.0 Archive](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork) からインストーラをダウンロード**
+1. **[NVIDIA Toolkit - CUDA10.0 Archive](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork){:target="_blank"} からインストーラをダウンロード**
 
 
 
@@ -156,7 +156,7 @@
 
 ## cuDNN セットアップ
 
-1. **[cuDNN - Download](https://developer.nvidia.com/rdp/form/cudnn-download-survey) へアクセス**
+1. **[cuDNN - Download](https://developer.nvidia.com/rdp/form/cudnn-download-survey){:target="_blank"} へアクセス**
 
    <br>
 
@@ -192,7 +192,7 @@
 
 ## OpenCV セットアップ
 
-1. **[OpenCV - Releases](https://opencv.org/releases/) からバージョン`3.4.6`の`Windows`をダウンロード（3.4.6でなくても3.x.xならOK）**
+1. **[OpenCV - Releases](https://opencv.org/releases/){:target="_blank"} からバージョン`3.4.6`の`Windows`をダウンロード（3.4.6でなくても3.x.xならOK）**
 
    <br>
 
@@ -228,7 +228,7 @@
 
 ## Darknet
 
-1. **[https://github.com/alexeyAB/darknet.git](https://github.com/alexeyAB/darknet.git) を Clone または zip をダウンロード（zip をダウンロードした場合は、展開までする）**
+1. **[https://github.com/alexeyAB/darknet.git](https://github.com/alexeyAB/darknet.git){:target="_blank"} を Clone または zip をダウンロード（zip をダウンロードした場合は、展開までする）**
 
    <br>
 
@@ -345,13 +345,13 @@
 
    <br>
 
-   ※ 成功しない場合は、[kazuya0202/setup-darknet-windowws.git](https://github.con/kazuya0202/setup-darknet-windows.git) の issue などで聞いて
+   ※ 成功しない場合は、[kazuya0202/setup-darknet-windowws.git](https://github.con/kazuya0202/setup-darknet-windows.git){:target="_blank"} の issue などで聞いて
 
    <br>
 
 9. **ビルドが正常にできたのか検証**
 
-   1. [https://pjreddie.com/media/files/yolov3.weights](https://pjreddie.com/media/files/yolov3.weights) から学習済みデータをダウンロード（ここでは`darknet/`に置く）
+   1. [https://pjreddie.com/media/files/yolov3.weights](https://pjreddie.com/media/files/yolov3.weights){:target="_blank"} から学習済みデータをダウンロード（ここでは`darknet/`に置く）
 
       <br>
 
