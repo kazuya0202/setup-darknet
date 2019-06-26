@@ -6,7 +6,7 @@
 
 *Description :* 
 
-+ [kazuya0202/setup-darknet-windowws.git](https://github.con/kazuya0202/setup-darknet-windows.git)
++ [kazuya0202/setup-darknet.git](https://github.con/kazuya0202/setup-darknet.git)
 + Visual Studio 2019をインストールする予定の場合は先にインストールしておいた方が良い
 
 <br>
