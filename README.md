@@ -345,7 +345,7 @@
 
    <br>
 
-   ※ 成功しない場合は、[kazuya0202/setup-darknet-windowws.git](https://github.con/kazuya0202/setup-darknet-windows.git) の issue などで聞いて
+   ※ 成功しない場合は、[kazuya0202/setup-darknet.git](https://github.com/kazuya0202/setup-darknet/issues) の issue などで聞いて
 
    <br>
 
