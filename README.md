@@ -341,7 +341,7 @@
 8. **再度ソリューションをビルド**
 
    + （成功するはず）
-   + 成功した場合は、`darknet/build/darknet/`フォルダの中に`darknet.exe`ができている
+   + 成功した場合は、`darknet/build/darknet/x64/`フォルダの中に`darknet.exe`ができている
 
    <br>
 
