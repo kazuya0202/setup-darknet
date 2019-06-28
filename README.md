@@ -358,7 +358,7 @@
    2. 下記のコマンドを実行
 
       ```
-      .\build\darknet\darknet.exe detector test .\cfg\coco.data .\cfg\yolov3.cfg .\yolov3.weights .\data\dog.jpg
+      .\build\darknet\x64\darknet.exe detector test .\cfg\coco.data .\cfg\yolov3.cfg .\yolov3.weights .\data\dog.jpg
       ```
 
       > dog: xx %
