@@ -30,35 +30,36 @@
 3. ダウンロードしたインストーラを起動
 
 4. 展開先フォルダの指定
-+ デフォルトのままで`OK`をクリックする。
-   
+
+    + デフォルトのままで`OK`をクリックする。
+
 5. ライセンスの確認
 
-   + `同意して実行する`をクリックする。
+    + `同意して実行する`をクリックする。
 
 6. インストールオプション
 
-   + `カスタム (詳細)`を選択し、`次へ`をクリックする。
+    + `カスタム (詳細)`を選択し、`次へ`をクリックする。
 
 7. カスタムインストールオプション（コンポーネントの選択）
 
-   + デフォルトのままで`次へ`をクリックする。
+    + デフォルトのままで`次へ`をクリックする。
 
-   **※ 複数バージョンの CUDA Toolkit をインストールする場合**
+    **※ 複数バージョンの CUDA Toolkit をインストールする場合**
 
-   + `古いバージョン`の CUDA Toolkit をインストールするときは`CUDAだけ`を選択する。（`CUDA`以外のコンポーネントはチェックを外す）
+    + `古いバージョン`の CUDA Toolkit をインストールするときは`CUDAだけ`を選択する。（`CUDA`以外のコンポーネントはチェックを外す）
 
 8. インストール場所を選択
 
-   + デフォルトのままで`次へ`を選択する。
+    + デフォルトのままで`次へ`を選択する。
 
 9. インストール
 
-   + このとき、Windows セキュリティの画面が開いたときは`インストール`をクリックする。
+    + このとき、Windows セキュリティの画面が開いたときは`インストール`をクリックする。
 
-   **※ インストールが失敗した場合**
+    **※ インストールが失敗した場合**
 
-   + 失敗したときは、もう一度インストーラを起動し、インストールするコンポーネントを必要なものに絞ってインストールする。
+    + 失敗したときは、もう一度インストーラを起動し、インストールするコンポーネントを必要なものに絞ってインストールする。
 
 10. Nsight Visual Studio
 
@@ -70,7 +71,7 @@
 
     ※ 再起動が必要な場合は再起動する。
 
-12. GeForce Experienceが開いた場合
+    + GeForce Experienceが開いた場合
 
     + `同意 / 実行`をクリックする。
     + リリースハイライトは`×`
@@ -92,7 +93,7 @@
     + システム環境変数 CUDA_PATH
 
       ```
-  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0
+      C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0
       ```
     
       ※ 複数バージョンの CUDA Toolkit をインストールしている場合は、最後にインストールしたものが設定される。
@@ -100,7 +101,7 @@
     + システム環境変数 CUDA_PATH_V10_0
 
       ```
-  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0
+      C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0
       ```
 
 14. `nvcc`にパスが通っていることを確認
@@ -118,10 +119,15 @@
 ## cuDNN セットアップ
 
 1. [cuDNN - Download](https://developer.nvidia.com/rdp/form/cudnn-download-survey) へアクセス
+
 2. `Join`を選択し、NVIDIA Developer のチームに入る（アカウントは各自作成する / Googleなどからログインする）
+
 3. `I Agree To the Teams ...`のチェックボックスをクリック
+
 4. `Download cuDNN v7.6.1 (June 24, 2019) for CUDA 10.0`をクリック
+
 5. `cuDNN Library for Windows 10`をクリックし、zipファイルをダウンロード
+
 6. ダウンロードしたファイルを展開
 
 7. 展開したフォルダ内の`bin` / `include` / `lib`フォルダを`C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0`に移動（binフォルダのファイルはbinフォルダに移動）
@@ -181,7 +187,7 @@
      2. `新しい行`をクリックし、以下を設定する。
 
         ```
-   C:\opencv_346\build\include
+        C:\opencv_346\build\include
         ```
      
         ![1561472503506](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561472503506.png)
@@ -195,7 +201,7 @@
      2. `新しい行`をクリックし、以下を設定する。
 
         ```
-   C:\opencv_346\build\x64\vc15\lib
+        C:\opencv_346\build\x64\vc15\lib
         ```
   
         ![1561473268096](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473268096.png)
@@ -226,17 +232,17 @@
 
    + その中で2行目の`C:\opencv_3.0\...`を自分の環境での OpenCV のパスに変更する。
 
-     ```
-  C:\opencv_346\build\include
-     ```
+      ```
+      C:\opencv_346\build\include
+      ```
    
      ![1561474407859](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561474407859.png)
 
    + `追加のライブラリディレクトリ`も同様に、3行目を自分の環境のパスに変更する。
 
-     ```
-  C:\opencv_346\build\x64/vc14\lib
-     ```
+      ```
+      C:\opencv_346\build\x64/vc14\lib
+      ```
 
      ![1561474360504](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561474360504.png)
    
@@ -254,9 +260,9 @@
    2. 下記のコマンドを実行
 
       ```bash
-   # dir: ~\darknet\build\darknet\x64\
+      # dir: ~\darknet\build\darknet\x64\
       .\darknet.exe
-```
+      ```
       
    > RESULT:
       >
