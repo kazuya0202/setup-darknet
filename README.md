@@ -263,11 +263,11 @@
       .\darknet.exe
       ```
       
-   > RESULT:
+      > RESULT:
       >
-   > ```bash
-      > usage: .\darknet <function>
-   > ```
+      > ```bash
+      usage: .\darknet <function>
+      > ```
    
       上の結果が得られれば、正常にビルドされている。
 
