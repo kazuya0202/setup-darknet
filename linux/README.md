@@ -18,7 +18,7 @@ https://github.com/kazuya0202/setup-darknet.git
 
 <br>
 
-# め～も～
+# MEMO
 
 ```bash
 ## cmake of OpenCV ( CUDAをインストールした後で )
