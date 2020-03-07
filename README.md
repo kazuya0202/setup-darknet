@@ -1,5 +1,13 @@
 # Darknet 環境構築 on Windows
 
++ 以下のリンクにアップデートバージョンを公開しています。
+
+[https://ichiya.netlify.com/posts/2019/10/28/_20191028.html](https://ichiya.netlify.com/posts/2019/10/28/_20191028.html)
+
+<br>
+
+<br>
+
 （2019 / 6 / 25 現在）
 
 <br>
@@ -202,7 +210,7 @@
         ```
         C:\opencv_346\build\x64\vc15\lib
         ```
-    
+   
         ![1561473268096](https://github.com/kazuya0202/setup-darknet/blob/master/images/1561473268096.png)
 
    + ビルドの依存関係の設定
